@@ -234,7 +234,7 @@ for (let i = 0; i < books.length; i++) {
     }
 
 }
-document.querySelector('[data-list-button]').innerHTML =  `Show more (${filteredBooks.length})`
+document.querySelector('[data-list-button]').innerHTML =  `Show result (${filteredBooks.length})`
 
 const fragment2 = document.createDocumentFragment()
     for (const {author ,image, title, id , description, published} of filteredBooks) {
@@ -253,6 +253,10 @@ const fragment2 = document.createDocumentFragment()
     const booklist2 = document.querySelector('[data-list-items]')
     booklist2.append(fragment2)
         document.querySelector('[data-search-form]').reset()
-        //document.querySelector("[data-search-overlay]").style.display = "none";
         document.querySelector('[class="backdrop"]').style.display = "none";
+
+        
     })
+   
+
+    
