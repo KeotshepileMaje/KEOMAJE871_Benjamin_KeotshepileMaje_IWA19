@@ -102,21 +102,17 @@ let booksRemaining = matches.length - [page * BOOKS_PER_PAGE]
  * Only 36 books are shown so the below code helps add 36 more books every time the button is pressed and show more books options to choose from.
  */
 
-const bookNotSeen = () => {
+
 const showMore = document.querySelector('[data-list-button]')
 const divOFShowMore = document.createElement('div')
 
 const showMoreText = /*html*/
-    `
-    <span>Show more</span>
-    <span class="list__remaining"> (${booksRemaining})</span>
-    `
+`
+<span>Show more</span>
+<span class="list__remaining"> (${booksRemaining})</span>
+`
 divOFShowMore.innerHTML = showMoreText;
 showMore.appendChild(divOFShowMore);
-return booksRemaining
-}
-
-bookNotSeen() // Show more(1320)
 
 //Function to add more books
 htmlDataset.list.button.addEventListener('click', function (event) {
@@ -140,7 +136,14 @@ htmlDataset.list.button.addEventListener('click', function (event) {
         fragment.appendChild(preview)
     }
     document.querySelector('[data-list-items]').appendChild(fragment)
-    bookNotSeen()
+    const showMoreText = /*html*/
+    `
+    <span>Show more</span>
+    <span class="list__remaining"> (${booksRemaining})</span>
+    `
+divOFShowMore.innerHTML = showMoreText;
+showMore.appendChild(divOFShowMore);
+
 }
 )
 
